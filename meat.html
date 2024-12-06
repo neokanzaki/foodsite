@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Рецепты</title>
     <style>
-        /* Фон сайта */
+        /* Основные стили */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-image: url('img/your-image.jpg'); /* Замените 'your-image.jpg' на путь к вашей картинке */
-            background-size: cover; /* Картинка будет растягиваться, чтобы покрывать весь экран */
-            background-position: center center; /* Картинка будет центрироваться */
-            background-attachment: fixed; /* Фон будет фиксирован на месте при прокрутке */
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
         }
 
         img {
-            border-radius: 15px;  /* Это сделает картинку круглой */
+            border-radius: 15px; /* Это сделает картинку с закруглёнными углами */
         }
 
         .back-button {
@@ -59,11 +59,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: rgba(78, 52, 46, 0.8);  /* Темный полупрозрачный фон для контента */
-            padding: 20px;  /* Добавляем отступы */
-            border-radius: 10px;  /* Немного скруглим углы */
+            background-color: rgba(78, 52, 46, 0.8); /* Темный полупрозрачный фон */
+            padding: 20px;
+            border-radius: 10px;
             width: 80%;
-            margin: 20px auto;  /* Центрируем секцию */
+            margin: 20px auto;
         }
 
         .recipe {
@@ -75,7 +75,7 @@
             width: 100%;
             height: 150px;
             background-color: #3E2723; /* Цвет фона для каждого рецепта */
-            border-radius: 10px;  /* Скругление углов */
+            border-radius: 10px;
         }
 
         .recipe img {
@@ -87,7 +87,7 @@
         .recipe-content {
             margin-left: 20px;
             flex: 1;
-            color: white;  /* Белый текст для лучшего контраста */
+            color: white;
         }
 
         .recipe-title {
@@ -128,6 +128,67 @@
 
         .bottom-menu a:hover {
             text-decoration: underline;
+        }
+
+        /* Адаптация под экран 1080x2460 */
+        @media screen and (max-width: 1080px) and (max-height: 2460px) {
+            body {
+                font-size: 14px; /* Уменьшаем общий размер текста */
+            }
+
+            .back-button {
+                top: 20px;
+                left: 20px;
+                width: 100px;
+                height: 40px;
+                font-size: 14px;
+                line-height: 40px;
+            }
+
+            .department-image img {
+                width: 90%; /* Увеличиваем ширину изображения */
+            }
+
+            .overlay-text {
+                font-size: 50px; /* Регулируем размер текста */
+            }
+
+            .section {
+                width: 90%; /* Увеличиваем ширину секции */
+                margin: 15px auto; /* Уменьшаем отступы */
+                padding: 15px;
+            }
+
+            .recipe {
+                height: 120px; /* Уменьшаем высоту рецепта */
+                margin: 10px 0;
+            }
+
+            .recipe img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .recipe-title {
+                font-size: 18px;
+            }
+
+            .recipe-text {
+                font-size: 12px;
+            }
+
+            .recipe-link {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            footer {
+                padding: 8px 0;
+            }
+
+            .bottom-menu a {
+                margin: 0 10px;
+            }
         }
     </style>
 </head>
@@ -185,7 +246,5 @@
             <a href="#" class="menu-item"><span>⚙️</span></a>
         </nav>
     </footer>
-
-
 </body>
 </html>
