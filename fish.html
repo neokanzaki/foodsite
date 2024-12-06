@@ -3,30 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рецепты из рыбы</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Рецепты</title>
+    <style>
+        /* Фон сайта */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('img/your-image.jpg'); /* Замените 'your-image.jpg' на путь к вашей картинке */
+            background-size: cover; /* Картинка будет растягиваться, чтобы покрывать весь экран */
+            background-position: center center; /* Картинка будет центрироваться */
+            background-attachment: fixed; /* Фон будет фиксирован на месте при прокрутке */
+        }
+
+        img {
+            border-radius: 15px;  /* Это сделает картинку круглой */
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            background-color: orange;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .department-image {
+            text-align: center;
+            position: relative;
+            margin: 20px;
+        }
+
+        .department-image img {
+            width: 80%;
+            border-radius: 15px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(78, 52, 46, 0.8);  /* Темный полупрозрачный фон для контента */
+            padding: 20px;  /* Добавляем отступы */
+            border-radius: 10px;  /* Немного скруглим углы */
+            width: 80%;
+            margin: 20px auto;  /* Центрируем секцию */
+        }
+
+        .recipe {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: 2px solid black;
+            margin: 15px 0;
+            width: 100%;
+            height: 150px;
+            background-color: #3E2723; /* Цвет фона для каждого рецепта */
+            border-radius: 10px;  /* Скругление углов */
+        }
+
+        .recipe img {
+            width: 120px;
+            height: 120px;
+            margin-left: 10px;
+        }
+
+        .recipe-content {
+            margin-left: 20px;
+            flex: 1;
+            color: white;  /* Белый текст для лучшего контраста */
+        }
+
+        .recipe-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .recipe-text {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .recipe-link {
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: red;
+            color: white;
+            border-radius: 5px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #FFF5E1;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .bottom-menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-menu a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Рецепты из рыбы</h1>
-    </header>
-    <main>
-        <div class="recipes">
-            <div class="recipe">
-                <h2>Запечённый лосось</h2>
-                <p>Описание рецепта...</p>
-            </div>
-            <div class="recipe">
-                <h2>Уха</h2>
-                <p>Описание рецепта...</p>
+    <button class="back-button" onclick="history.back()">Назад</button>
+
+    <div class="department-image">
+        <img src="img/Лосось-с-лимоном.jpg" alt="Рыбный отдел">
+        <div class="overlay-text">Рыбный отдел</div>
+    </div>
+
+    <div class="section">
+        <div class="recipe">
+            <img src="img/losos-icon.jpg" alt="Запеченный лосось с лимоном">
+            <div class="recipe-content">
+                <div class="recipe-title">Запеченный лосось с лимоном:</div>
+                <div class="recipe-text">
+                    <b>Ингредиенты: Лосось, лимон, оливковое масло, соль, перец.</b>
+                </div>
+                <a href="losos.html" class="recipe-link" target="_blank">Посмотреть рецепт</a>
             </div>
         </div>
-    </main>
-    <footer>
+
+        <div class="recipe">
+            <img src="img/treska-icon.jpg" alt="Треска на сковороде">
+            <div class="recipe-content">
+                <div class="recipe-title">Треска на сковороде:</div>
+                <div class="recipe-text">
+                    <b>Ингредиенты:</b> <i>Треска, оливковое масло, соль, перец.</i>
+                </div>
+                <a href="treska.html" class="recipe-link" target="_blank">Посмотреть рецепт</a>
+            </div>
+        </div>
+
+        <div class="recipe">
+            <img src="img/skumbria-icon.jpg" alt="Стейк из скумбрии на гриле">
+            <div class="recipe-content">
+                <div class="recipe-title">Стейк из скумбрии на гриле:</div>
+                <div class="recipe-text">
+                    <b>Ингредиенты:</b> <i>Скумбрия, лимон, соль, перец.</i>
+                </div>
+                <a href="skumbria.html" class="recipe-link" target="_blank">Посмотреть рецепт</a>
+            </div>
+        </div>
+    </div>
+	
+	<footer class="footer">
         <nav class="bottom-menu">
-            <a href="index.html">Главная</a>
-            <a href="meat.html">Мясо</a>
-            <a href="vegetables.html">Овощи</a>
+            <a href="#" class="menu-item"><span>🏠</span></a>
+            <a href="profile.html" class="menu-item"><span>👤</span></a>
+            <a href="#" class="menu-item"><span>🍳</span></a>
+            <a href="#" class="menu-item"><span>❤️</span></a>
+            <a href="#" class="menu-item"><span>⚙️</span></a>
         </nav>
     </footer>
 </body>

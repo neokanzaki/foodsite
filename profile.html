@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль пользователя</title>
+    <style>
+        /* Стилизация окна профиля */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('img/your-image.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            background-color: orange;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(78, 52, 46, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: 20px auto;
+            color: white;
+        }
+
+        .profile-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .form-group button {
+            background-color: #ff8c00;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #FFF5E1;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .bottom-menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-menu a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="history.back()">Назад</button>
+
+    <div class="profile-container">
+        <div class="profile-header">Редактировать профиль</div>
+        <form action="/submit-profile" method="POST">
+            <div class="form-group">
+                <label for="username">Имя пользователя</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Электронная почта</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="bio">О себе</label>
+                <textarea id="bio" name="bio" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Сохранить изменения</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <nav class="bottom-menu">
+            <a href="#" class="menu-item"><span>🏠</span></a>
+            <a href="#" class="menu-item"><span>👤</span></a>
+            <a href="#" class="menu-item"><span>🍳</span></a>
+            <a href="#" class="menu-item"><span>❤️</span></a>
+            <a href="#" class="menu-item"><span>⚙️</span></a>
+        </nav>
+    </footer>
+
+</body>
+</html>
