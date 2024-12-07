@@ -109,7 +109,7 @@ img {
 }
 
 footer {
-    position: fixed;
+    position: relative; /* используем relative вместо fixed */
     width: 100%;
     background-color: #FFF5E1;
     color: white;
