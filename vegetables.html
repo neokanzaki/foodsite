@@ -4,138 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Рецепты</title>
-    <style>
-        /* Фон сайта */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('img/your-image.jpg'); /* Замените 'your-image.jpg' на путь к вашей картинке */
-            background-size: cover; /* Картинка будет растягиваться, чтобы покрывать весь экран */
-            background-position: center center; /* Картинка будет центрироваться */
-            background-attachment: fixed; /* Фон будет фиксирован на месте при прокрутке */
-        }
-
-        img {
-            border-radius: 15px;  /* Это сделает картинку круглой */
-        }
-
-        .back-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            padding: 10px 15px;
-            cursor: pointer;
-            border: none;
-            background-color: orange;
-            color: white;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-
-        .overlay-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 60px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .department-image {
-            text-align: center;
-            position: relative;
-            margin: 20px;
-        }
-
-        .department-image img {
-            width: 80%;
-            border-radius: 15px;
-        }
-
-        .section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: rgba(78, 52, 46, 0.8);  /* Темный полупрозрачный фон для контента */
-            padding: 20px;  /* Добавляем отступы */
-            border-radius: 10px;  /* Немного скруглим углы */
-            width: 80%;
-            margin: 20px auto;  /* Центрируем секцию */
-        }
-
-        .recipe {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            border: 2px solid black;
-            margin: 15px 0;
-            width: 100%;
-            height: 150px;
-            background-color: #3E2723; /* Цвет фона для каждого рецепта */
-            border-radius: 10px;  /* Скругление углов */
-        }
-
-        .recipe img {
-            width: 120px;
-            height: 120px;
-            margin-left: 10px;
-        }
-
-        .recipe-content {
-            margin-left: 20px;
-            flex: 1;
-            color: white;  /* Белый текст для лучшего контраста */
-        }
-
-        .recipe-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .recipe-text {
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .recipe-link {
-            text-decoration: none;
-            display: inline-block;
-            padding: 10px 15px;
-            background-color: red;
-            color: white;
-            border-radius: 5px;
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #FFF5E1;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        .bottom-menu a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        .bottom-menu a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="category.css">
 </head>
 <body>
     <button class="back-button" onclick="history.back()">Назад</button>
 
     <div class="department-image">
-        <img src="img/ovsanka1.jpg" alt="Овощной отдел">
         <div class="overlay-text">Овощной отдел</div>
     </div>
 
@@ -146,7 +20,7 @@
                 <div class="recipe-title">Салат с киноа и авокадо:</div>
                 <div class="recipe-text">
                     <b>Ингредиенты:</b><br>
-                    <i>Киноа, авокадо, огурец, зелень (петрушка, укроп),<br>
+                    <i>Киноа, авокадо, огурец, зелень,<br>
                     оливковое масло, лимонный сок, соль.</i>
                 </div>
                 <a href="salat.html" class="recipe-link" target="_blank">Посмотреть рецепт</a>
@@ -159,8 +33,8 @@
                 <div class="recipe-title">Тушёная курица с овощами:</div>
                 <div class="recipe-text">
                     Ингредиенты:<br>
-                    яйца, соль, перец, подсолнечное масло,<br>
-                    томат.
+                    яйца, соль, перец, подсолнечное масло,
+                    томат.<br>
                 </div>
                 <a href="ovoshi.html" class="recipe-link" target="_blank">Посмотреть рецепт</a>
             </div>
@@ -172,8 +46,8 @@
                 <div class="recipe-title">Овсянка с ягодами и орехами:</div>
                 <div class="recipe-text">
                     Ингредиенты:<br>
-                    курица, фольга, подсолнечное масло, сыр,<br>
-                    томат черри.
+                    курица, фольга, подсолнечное
+                    <br>масло, сыр, томат черри.
                 </div>
                 <a href="fried_chicken.html" class="recipe-link" target="_blank">Посмотреть рецепт</a>
             </div>
@@ -189,6 +63,5 @@
             <a href="#" class="menu-item"><span>⚙️</span></a>
         </nav>
     </footer>
-
 </body>
 </html>
