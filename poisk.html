@@ -118,9 +118,17 @@ h1 {
     </style>
 </head>
 <body>
-    <form action="index.html">
-    <button type="submit" class="back-button">Назад</button>
-    </form>
+    <button class="back-button" onclick="handleBack()">Назад</button>
+
+<script>
+  function handleBack() {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.href = 'index.html'; // запасной вариант перехода
+    }
+  }
+</script>
     
     <h1>Поиск продуктов</h1>
 
