@@ -17,7 +17,7 @@
         }
         .back-button {
             position: absolute;
-            top: 10px;
+            top: 50px;
             left: 10px;
             padding: 10px 15px;
             cursor: pointer;
@@ -26,10 +26,12 @@
             color: white;
             font-size: 16px;
             border-radius: 5px;
+            z-index: 10;
         }
         main {
             padding: 20px;
             text-align: center;
+             margin-top: 60px;
         }
         h1 {
             text-align: center;
@@ -75,7 +77,7 @@
             cursor: pointer;
             border-radius: 5px;
         }
-                footer {
+            footer {
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -106,9 +108,8 @@
     </style>
 </head>
 <body>
-    <form action="index.html">
-        <button type="submit" class="back-button">Назад</button>
-    </form>
+    <button class="back-button" onclick="handleBack()">Назад</button>
+    <script src="back.js"></script>
 
     <main>
         <h1>Избранные блюда</h1>
@@ -121,15 +122,21 @@
         <nav class="bottom-menu">
             <a href="index.html" class="menu-item"><span>🏠</span></a>
             <a href="profile.html" class="menu-item"><span>👤</span></a>
-            <a href="favourites.html" class="menu-item"><span>❤️</span></a>
+            <a href="poisk.html" class="menu-item"><span>🍳</span></a>
         </nav>
     </footer>
 
     <script>
         const dishes = [
-            { name: 'Название блюда 1', ingredients: 5, time: '30 мин' },
-            { name: 'Название блюда 2', ingredients: 3, time: '20 мин' },
-            { name: 'Название блюда 3', ingredients: 7, time: '40 мин' },
+            { name: 'Домашние пельмени', ingredients: 5, time: '30 мин' },
+            { name: 'Яйца жареные', ingredients: 3, time: '20 мин' },
+            { name: 'Жареная курица', ingredients: 7, time: '40 мин' },
+            { name: 'Запеченный лосось с лимоном', ingredients: 5, time: '30 мин' },
+            { name: 'Треска на сковороде', ingredients: 3, time: '20 мин' },
+            { name: 'Стейк из скумбрии на гриле', ingredients: 7, time: '40 мин' },
+            { name: 'Салат с киноа и авокадо', ingredients: 5, time: '30 мин' },
+            { name: 'Тушёная курица с овощами', ingredients: 3, time: '20 мин' },
+            { name: 'Овсянка с ягодами и орехами', ingredients: 7, time: '40 мин' },
             // Добавьте больше блюд по необходимости
         ];
 
