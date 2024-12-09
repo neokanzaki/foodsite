@@ -18,7 +18,7 @@
 
         .back-button {
             position: absolute;
-            top: 10px;
+            top: 50px;
             left: 10px;
             padding: 10px 15px;
             cursor: pointer;
@@ -27,6 +27,7 @@
             color: white;
             font-size: 16px;
             border-radius: 5px;
+            z-index: 10;
         }
 
         .profile-container {
@@ -38,6 +39,7 @@
             border-radius: 10px;
             width: 60%;
             margin: 20px auto;
+            margin-top: 100px;
             color: white;
         }
 
@@ -91,12 +93,19 @@
             color: white;
             text-align: center;
             padding: 10px 0;
+            margin-top: auto;
         }
 
         .bottom-menu a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         }
 
         .bottom-menu a:hover {
@@ -105,9 +114,8 @@
     </style>
 </head>
 <body>
-    <form action="index.html">
-    <button type="submit" class="back-button">Назад</button>
-    </form>
+  <button class="back-button" onclick="handleBack()">Назад</button>
+  <script src="back.js"></script>
 
     <div class="profile-container">
         <div class="profile-header">Редактировать профиль</div>

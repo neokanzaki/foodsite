@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранные блюда</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('img/background-preview.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            color: white;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            background-color: #FF7043;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .dish-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 15px auto;
+            padding: 10px;
+            background-color: #3E2723;
+            border-radius: 10px;
+            width: 80%;
+            transition: background-color 0.3s;
+        }
+        .dish-container:hover {
+            background-color: #FF7043;
+        }
+        .dish-image {
+            width: 100px;
+            height: 100px;
+            margin-right: 15px;
+            border-radius: 10px;
+        }
+        .dish-info {
+            flex-grow: 1;
+        }
+        .dish-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+        .dish-details {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .action-button {
+            padding: 10px;
+            background-color: orange;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+                footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #FFF5E1;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+
+        .bottom-menu a {
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .bottom-menu a:hover {
+            text-decoration: underline;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <form action="index.html">
+        <button type="submit" class="back-button">Назад</button>
+    </form>
+
+    <main>
+        <h1>Избранные блюда</h1>
+        <div id="dishes">
+            <!-- Список блюд появится здесь -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <nav class="bottom-menu">
+            <a href="index.html" class="menu-item"><span>🏠</span></a>
+            <a href="profile.html" class="menu-item"><span>👤</span></a>
+            <a href="favourites.html" class="menu-item"><span>❤️</span></a>
+        </nav>
+    </footer>
+
+    <script>
+        const dishes = [
+            { name: 'Название блюда 1', ingredients: 5, time: '30 мин' },
+            { name: 'Название блюда 2', ingredients: 3, time: '20 мин' },
+            { name: 'Название блюда 3', ingredients: 7, time: '40 мин' },
+            // Добавьте больше блюд по необходимости
+        ];
+
+        function loadFavorites() {
+            return JSON.parse(localStorage.getItem('favourites') || '[]');
+        }
+
+        function saveFavorites(favorites) {
+            localStorage.setItem('favourites', JSON.stringify(favorites));
+        }
+
+        function renderDishes() {
+            const favorites = loadFavorites();
+            const dishesContainer = document.getElementById('dishes');
+            dishesContainer.innerHTML = '';
+
+            dishes.forEach((dish, index) => {
+                const isFavorite = favorites.includes(dish.name);
+
+                const dishElement = document.createElement('div');
+                dishElement.className = 'dish-container';
+
+                dishElement.innerHTML = `
+                    <div class="dish-info">
+                        <p class="dish-title">${dish.name}</p>
+                        <p class="dish-details">Ингредиентов: ${dish.ingredients}</p>
+                        <p class="dish-details">Время приготовления: ${dish.time}</p>
+                    </div>
+                    <button 
+                        class="action-button" 
+                        onclick="toggleFavorite('${dish.name}', ${index})">
+                        ${isFavorite ? 'Удалить из избранного' : 'Добавить в избранное'}
+                    </button>
+                `;
+
+                dishesContainer.appendChild(dishElement);
+            });
+        }
+
+        function toggleFavorite(dishName) {
+            const favorites = loadFavorites();
+
+            if (favorites.includes(dishName)) {
+                const index = favorites.indexOf(dishName);
+                favorites.splice(index, 1);
+            } else {
+                favorites.push(dishName);
+            }
+
+            saveFavorites(favorites);
+            renderDishes();
+        }
+
+        // Рендерим блюда при загрузке страницы
+        renderDishes();
+    </script>
+</body>
+</html>

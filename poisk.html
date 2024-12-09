@@ -23,14 +23,7 @@ main {
     flex: 1; /* Гарантирует, что основной контент занимает все доступное пространство */
 }
 
-footer {
-    width: 100%;
-    background-color: #FFF5E1;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px; /* Отступ между контентом и футером */
-}
+
 
 .search-container {
     text-align: center;
@@ -87,19 +80,35 @@ a {
     font-size: 18px;
 }
 
-.bottom-menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-}
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #FFF5E1;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
 
-.bottom-menu a:hover {
-    text-decoration: underline;
-}
+        .bottom-menu a {
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        }
 
+        .bottom-menu a:hover {
+            text-decoration: underline;
+        }
 .back-button {
     position: absolute;
-    top: 10px;
+    top: 50px;
     left: 10px;
     padding: 10px 15px;
     cursor: pointer;
@@ -108,27 +117,19 @@ a {
     color: white;
     font-size: 16px;
     border-radius: 5px;
+    z-index: 10;
 }
 
 h1 {
     text-align: center; /* Выравнивание текста по центру */
-    margin-top: 20px; /* Отступ сверху */
+    margin-top: 100px; /* Отступ сверху */
 }
 
     </style>
 </head>
 <body>
     <button class="back-button" onclick="handleBack()">Назад</button>
-
-<script>
-  function handleBack() {
-    if (window.history.length > 1) {
-      window.history.back();
-    } else {
-      window.location.href = 'index.html'; // запасной вариант перехода
-    }
-  }
-</script>
+    <script src="back.js"></script>
     
     <h1>Поиск продуктов</h1>
 
@@ -152,7 +153,7 @@ h1 {
         </ul>
     </main>
 
-    <footer>
+    <footer class="footer">
         <nav class="bottom-menu">
             <a href="index.html" class="menu-item"><span>🏠</span></a>
             <a href="profile.html" class="menu-item"><span>👤</span></a>
